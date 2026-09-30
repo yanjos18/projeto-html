@@ -1,72 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
     <title>Pet Lar</title>
 
     <style>
         body {
             font-family: Arial;
+            background: #f5f5f5;
+            margin: 0;
+        }
+
+        .pagina {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
         }
 
         h1 {
             color: #55bda3;
         }
 
+        h2 span {
+            color: #55bda3;
+        }
+
         button {
-            background-color: #55bda3;
+            background: #55bda3;
             color: white;
-            padding: 10px;
+            border: 0;
+            padding: 12px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .pets {
+            display: flex;
+            gap: 20px;
+        }
+
+        .pet {
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 15px;
+        }
+
+        .pet img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 0;
+            background: #eee;
+            border-radius: 20px;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        section {
+            padding: 30px 0;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>🐾 Pet Lar</h1>
+<div class="pagina">
 
-    <h2>ENCONTRE UM LAR.</h2>
+    <h1>🏠 PetLar</h1>
 
-    <h3>MUDE UMA VIDA</h3>
+    <section>
+        <h2>ENCONTRE UM LAR.</h2>
+        <h2><span>MUDE UMA VIDA.</span></h2>
 
-    <p>
-        Encontre um pet para adotar
-        e dê a ele um novo lar.
-    </p>
+        <p>
+            Encontre um pet para adotar
+            e dê a ele um novo lar.
+        </p>
 
-    <button>ENCONTRE UM PET</button>
+        <button onclick="buscar()">
+            ENCONTRE UM PET
+        </button>
+    </section>
 
-    <h2>Pets disponíveis</h2>
 
-    <h3>TOM</h3>
-    <img src="tom.png" width="100">
-    <p>2 anos - São Paulo</p>
+    <section>
+        <h2>Pets disponíveis</h2>
 
-    <h3>LUNA</h3>
-    <img src="luna.png" width="100">
-    <p>1 ano - São Paulo</p>
+        <div class="pets">
 
-    <hr>
+            <div class="pet">
+                <img src="tom.png">
+                <h3>TOM</h3>
+                <p>2 anos - São Paulo</p>
 
-    <h2>Buscar Pet</h2>
+                <button onclick="adotar('Tom')">
+                    Quero adotar
+                </button>
+            </div>
 
-    <input type="text" placeholder="Nome do pet">
+            <div class="pet">
+                <img src="luna.png">
+                <h3>LUNA</h3>
+                <p>1 ano - São Paulo</p>
 
-    <button>Buscar</button>
+                <button onclick="adotar('Luna')">
+                    Quero adotar
+                </button>
+            </div>
 
-    <h2>Quero adotar</h2>
+        </div>
+    </section>
 
-    <input type="text" placeholder="Nome">
-    <br><br>
 
-    <input type="email" placeholder="E-mail">
-    <br><br>
+    <section id="busca">
 
-    <input type="text" placeholder="Telefone">
-    <br><br>
+        <h2>🔎 Buscar Pet</h2>
 
-    <button>Enviar</button>
+        <input
+            id="pesquisa"
+            type="text"
+            placeholder="Nome do pet">
+
+        <button onclick="buscarPet()">
+            Buscar
+        </button>
+
+    </section>
+
+
+    <section id="formulario">
+
+        <h2>🐾 Quero adotar</h2>
+
+        <input
+            type="text"
+            placeholder="Nome">
+
+        <input
+            type="email"
+            placeholder="E-mail">
+
+        <input
+            type="text"
+            placeholder="Telefone">
+
+        <textarea
+            placeholder="Por que deseja adotar?">
+        </textarea>
+
+        <br>
+
+        <button onclick="enviar()">
+            Enviar
+        </button>
+
+    </section>
+
+</div>
+
+
+<script>
+
+function buscar() {
+    document.getElementById("busca")
+        .scrollIntoView({ behavior: "smooth" });
+}
+
+function adotar(pet) {
+    alert("Você escolheu adotar " + pet + "!");
+    document.getElementById("formulario")
+        .scrollIntoView({ behavior: "smooth" });
+}
+
+function buscarPet() {
+
+    let nome = document
+        .getElementById("pesquisa")
+        .value;
+
+    if (nome == "") {
+        alert("Digite o nome do pet.");
+    } else {
+        alert("Buscando por: " + nome);
+    }
+}
+
+function enviar() {
+    alert("Solicitação enviada com sucesso! 🐾");
+}
+
+</script>
 
 </body>
-
 </html>
