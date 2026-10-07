@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pet Lar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="pagina">
+
+    <h1>🏠 PetLar</h1>
+
+    <section>
+        <h2>ENCONTRE UM LAR.</h2>
+        <h2><span>MUDE UMA VIDA.</span></h2>
+
+        <p>
+            Encontre um pet para adotar
+            e dê a ele um novo lar.
+        </p>
+
+        <button onclick="buscar()">
+            ENCONTRE UM PET
+        </button>
+    </section>
+
+    <section>
+        <h2>Pets disponíveis</h2>
+
+        <div class="pets">
+
+            <div class="pet">
+                <img src="tom.png">
+                <h3>TOM</h3>
+                <p>2 anos - São Paulo</p>
+
+                <button onclick="adotar('Tom')">
+                    Quero adotar
+                </button>
+            </div>
+
+            <div class="pet">
+                <img src="luna.png">
+                <h3>LUNA</h3>
+                <p>1 ano - São Paulo</p>
+
+                <button onclick="adotar('Luna')">
+                    Quero adotar
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="busca">
+
+        <h2>🔎 Buscar Pet</h2>
+
+        <input
+            id="pesquisa"
+            type="text"
+            placeholder="Nome do pet">
+
+        <button onclick="buscarPet()">
+            Buscar
+        </button>
+
+    </section>
+
+    <section id="formulario">
+
+        <h2>🐾 Quero adotar</h2>
+
+        <input
+            type="text"
+            placeholder="Nome">
+
+        <input
+            type="email"
+            placeholder="E-mail">
+
+        <input
+            type="text"
+            placeholder="Telefone">
+
+        <textarea
+            placeholder="Por que deseja adotar?"></textarea>
+
+        <br>
+
+        <button onclick="enviar()">
+            Enviar
+        </button>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

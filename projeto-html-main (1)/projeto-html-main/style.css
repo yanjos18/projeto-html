@@ -1,0 +1,65 @@
+ body {
+    font-family: Arial;
+    background: #f5f5f5;
+    margin: 0;
+}
+
+.pagina {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+}
+
+h1 {
+    color: #55bda3;
+}
+
+h2 span {
+    color: #55bda3;
+}
+
+button {
+    background: #55bda3;
+    color: white;
+    border: 0;
+    padding: 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.pets {
+    display: flex;
+    gap: 20px;
+}
+
+.pet {
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 15px;
+}
+
+.pet img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+input,
+textarea {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 0;
+    background: #eee;
+    border-radius: 20px;
+}
+
+textarea {
+    height: 80px;
+}
+
+section {
+    padding: 30px 0;
+}
